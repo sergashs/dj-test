@@ -1,19 +1,51 @@
 /* buttons */
 .btn {
 	white-space: normal;
-	.fa {
-		margin-left: 5px;
+	font-weight: 700;
+	font-size: 1.6rem;
+	padding: 0.7rem 1.6rem;
+	border-radius: 0.8rem;
+
+	&-primary {
+		color: $white;
+		background: $primary;
+
+		&:hover {
+			text-decoration: none;
+			color: $white;
+			background: darken($primary, 10);
+		}
+
+		&:checked + &,
+		&:not(.btn-check) + &:active,
+		&:first-child:active,
+		&.active,
+		&.show {
+			color: $white;
+			background: darken($primary, 15);
+		}
 	}
 
-	&-block {
-		
-	}
+	&-outline-light {
+		position: relative;
+		color: $dark;
+		background: $white;
+		border-radius: 0.8rem;
+		border: solid 0.2rem $border;
 
-	&-sm {
-		
-	}
+		&:hover {
+			text-decoration: none;
+			background: darken($white, 10);
+			border-color: darken($white, 10);
+		}
 
-	&-lg {
-		
+		&:checked + &,
+		&:not(.btn-check) + &:active,
+		&:first-child:active,
+		&.active,
+		&.show {
+			background: darken($white, 15);
+			border-color: darken($white, 15);
+		}
 	}
 }

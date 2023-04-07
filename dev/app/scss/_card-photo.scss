@@ -1,0 +1,75 @@
+.card-photo {
+	height: 100%;
+	background: $white;
+	border: 1px solid $border;
+	border-radius: 0.8rem;
+
+	.card-img-top {
+		border-top-left-radius: 0.8rem;
+		border-top-right-radius: 0.8rem;
+	}
+
+	.card-body {
+		padding: 1.6rem 2.4rem;
+	}
+
+	.card-title {
+		margin-bottom: 0.4rem;
+		font-weight: 700;
+		font-size: 2.4rem;
+		line-height: 1.5;
+		color: $dark;
+	}
+
+	.card-text {
+		color: $secondary;
+	}
+
+	.card-footer {
+		display: flex;
+		padding: 1.6rem;
+		background: $white;
+		border-color: $border;
+		border-radius: 0 0 0.8rem 0.8rem;
+
+		.btn {
+			&:not(:last-child) {
+				margin-right: 1.6rem;
+			}
+		}
+	}
+
+	.card-spoiler {
+		.btn-more {
+			display: none;
+			font-weight: 500;
+			color: $dark;
+		}
+
+		&.show-btn {
+			.card-text {
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+
+			.btn-more {
+				display: inline-block;
+			}
+		}
+
+		.card-text {
+			margin-bottom: 0.8rem;
+			transition: all 0.3s linear;
+
+			p {
+				margin-bottom: 0;
+			}
+
+			&.show-full {
+				-webkit-line-clamp: unset;
+			}
+		}
+	}
+}

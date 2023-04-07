@@ -1,60 +1,56 @@
-let loadLazyLoadScript = false;
-
 document.addEventListener('DOMContentLoaded', () => {
-
-
+	cardSpoilers();
 });
 
 window.addEventListener('resize', () => {
-
+	cardSpoilers();
 });
 
 
+function cardSpoilers() {
+	const spoilers = document.querySelectorAll('.card-spoiler');
 
-// lazyLoad Images
-function lazyLoad() {
-	if ('loading' in HTMLImageElement.prototype) {
-		const images = document.querySelectorAll('img.lazyload');
-		images.forEach(function (img) {
-			img.src = img.dataset.src;
-			img.onload = function () {
-				img.classList.add('lazyloaded');
-			};
-			if (img.classList.contains('svg-html')) {
-				replaseInlineSvg(img);
-			}
-			if (img.classList.contains('lazyload-bg')) {
-				img.style.display = "none";
-				img.parentNode.style.backgroundImage = "url(" + img.dataset.src + ")";
-			}
-		});
-	} else {
-		if (!loadLazyLoadScript) {
-			loadLazyLoadScript = true;
-			const script = document.createElement("script");
-			script.async = true;
-			script.src = 'js/lazysizes.min.js';
-			document.body.appendChild(script);
+	spoilers.forEach((item) => {
+		const textHolder = item.querySelector(".card-text");
+		const paragraps = item.querySelectorAll('p');
+		const btn = item.querySelector('.btn-more');
+		let height = 0;
+		let btnState = false;
+		let textLength = 0;
+
+
+		paragraps.forEach((p) => {
+			textLength += p.innerHTML.length;
+		})
+
+		if (textLength > 86) {
+			item.classList.add('show-btn');
 		}
-		document.addEventListener('lazyloaded', function (e) {
-			const img = e.target;
-			if (img.classList.contains('lazyload-bg')) {
-				img.style.display = 'none';
-				img.parentNode.style.backgroundImage = 'url(' + img.dataset.src + ')';
-			}
-			if (img.classList.contains('svg-html')) {
-				replaseInlineSvg(img);
+
+		height = textHolder.offsetHeight;
+		textHolder.style.height = `${height}px`;
+
+		if (height === textHolder.scrollHeight) {
+			item.classList.remove('show-btn');
+		}
+
+		btn.addEventListener('click', function (event) {
+			event.preventDefault();
+			if (!btnState) {
+				textHolder.classList.add('show-full');
+				textHolder.style.height = `${textHolder.scrollHeight}px`;
+				btnState = true;
+			} else {
+				textHolder.classList.remove('show-full');
+				textHolder.style.height = `${height}px`;
+				btnState = false;
 			}
 		});
-	}
+
+	})
 }
 
 
-// correctVh
-function correctVh() {
-	const vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', vh + 'px');
-}
 
 // mobile menu
 function mobileMenu() {
