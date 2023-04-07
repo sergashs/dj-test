@@ -12484,12 +12484,11 @@ a {
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-a.btn {
-	text-decoration: none;
-}
-
 a:hover {
 	text-decoration: underline;
+}
+a.btn {
+	text-decoration: none;
 }
 
 button,

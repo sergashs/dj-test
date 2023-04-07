@@ -21,13 +21,13 @@ a {
 	color: $links-color-base;
 	transition: $transition;
 
+	&:hover {
+		text-decoration: underline;
+	}
+
 	&.btn {
 		text-decoration: none;
 	}
-}
-
-a:hover {
-	text-decoration: underline;
 }
 
 button,
