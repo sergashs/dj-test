@@ -4,8 +4,6 @@
 @import "bootstrap/_bootstrap";
 @import "reset";
 @import "_fonts";
-@import "buttons";
-@import "header";
 
 // pages
 @import "./pages/_page-photos";
@@ -14,3 +12,7 @@
 @import "./elements/_card-photo";
 @import "./elements/_btn-group";
 @import "./elements/_list-group";
+@import "./elements/_buttons";
+
+// layout
+@import "./layout/_header";
