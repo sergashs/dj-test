@@ -14,11 +14,12 @@
 	}
 
 	.list-group {
-		max-width: 27.3rem;
-
 		@include media-breakpoint-up(xl) {
-			margin-top: 1.6rem;
 			margin-left: -1.1rem;
+		}
+
+		@include media-breakpoint-up(lg) {
+			margin-top: 1.6rem;
 		}
 
 		@include media-breakpoint-down(lg) {

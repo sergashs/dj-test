@@ -1,0 +1,26 @@
+.list-group {
+	max-width: 27.3rem;
+	font-weight: 700;
+
+	@include media-breakpoint-down(sm) {
+		max-width: 100%;
+	}
+
+	.list-group-item {
+		display: flex;
+		align-items: center;
+		padding: 0.8rem 1.2rem;
+		color: $secondary;
+		border: none;
+		border-radius: 0.8rem;
+
+		&.active {
+			color: $white;
+		}
+
+		.icon-holder {
+			display: flex;
+			margin-right: 0.8rem;
+		}
+	}
+}

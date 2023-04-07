@@ -1,0 +1,14 @@
+.btn-group {
+	.btn {
+		&.active {
+			color: $white;
+			background: $dark;
+			border: solid 0.2rem $dark;
+		}
+
+		&:not(.btn-check:first-child) + .btn,
+		.btn-group > .btn-group:not(:first-child) {
+			margin-left: 0;
+		}
+	}
+}

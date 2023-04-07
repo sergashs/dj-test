@@ -64,7 +64,9 @@
 			transition: all 0.3s linear;
 
 			p {
-				margin-bottom: 0;
+				&:last-child {
+					margin-bottom: 0;
+				}
 			}
 
 			&.show-full {

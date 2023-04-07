@@ -2,17 +2,15 @@
 
 @import "vars";
 @import "bootstrap/_bootstrap";
-@import "mixins";
 @import "reset";
 @import "_fonts";
-
-@import "common";
 @import "buttons";
 @import "header";
-@import "footer";
 
 // pages
 @import "./pages/_page-photos";
 
 // elements
-@import "_card-photo";
+@import "./elements/_card-photo";
+@import "./elements/_btn-group";
+@import "./elements/_list-group";

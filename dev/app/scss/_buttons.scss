@@ -7,45 +7,12 @@
 	border-radius: 0.8rem;
 
 	&-primary {
-		color: $white;
-		background: $primary;
-
-		&:hover {
-			text-decoration: none;
-			color: $white;
-			background: darken($primary, 10);
-		}
-
-		&:checked + &,
-		&:not(.btn-check) + &:active,
-		&:first-child:active,
-		&.active,
-		&.show {
-			color: $white;
-			background: darken($primary, 15);
-		}
+		@include button-variant($primary, $primary, $white, darken($primary, 10), darken($primary, 10), $white, darken($primary, 20), darken($primary, 20), $white);
 	}
 
 	&-outline-light {
-		position: relative;
-		color: $dark;
-		background: $white;
-		border-radius: 0.8rem;
 		border: solid 0.2rem $border;
 
-		&:hover {
-			text-decoration: none;
-			background: darken($white, 10);
-			border-color: darken($white, 10);
-		}
-
-		&:checked + &,
-		&:not(.btn-check) + &:active,
-		&:first-child:active,
-		&.active,
-		&.show {
-			background: darken($white, 15);
-			border-color: darken($white, 15);
-		}
+		@include button-variant($white, $border, $dark, darken($white, 10), darken($white, 10), $dark, $dark, $dark, $white);
 	}
 }

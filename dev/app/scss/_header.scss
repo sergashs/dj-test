@@ -3,7 +3,7 @@
 	margin-bottom: 4rem;
 	border-bottom: solid 0.1rem $border;
 
-	@include media-breakpoint-down(lg) {
+	@include media-breakpoint-down(md) {
 		padding-top: 1rem;
 		padding-bottom: 1rem;
 	}
@@ -48,7 +48,7 @@
 			text-decoration: none;
 
 			@include media-breakpoint-down(md) {
-				padding: 1rem 2rem;
+				padding: 0.5rem 0;
 			}
 
 			&:hover {
@@ -83,8 +83,7 @@
 				z-index: 2;
 
 				@include media-breakpoint-down(md) {
-					border-bottom: none;
-					border-left: 0.2rem solid;
+					bottom: 0.3rem;
 				}
 			}
 
@@ -94,11 +93,6 @@
 
 				&::before {
 					width: 100%;
-
-					@include media-breakpoint-down(md) {
-						width: 0;
-						height: 100%;
-					}
 				}
 			}
 		}
@@ -111,8 +105,6 @@
 		border-radius: 10rem;
 
 		@include media-breakpoint-up(md) {
-			max-width: 54.6rem;
-			margin-left: 2.2rem;
 			margin-right: 4.2rem;
 		}
 
