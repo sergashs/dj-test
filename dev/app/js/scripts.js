@@ -8,10 +8,10 @@ window.addEventListener('resize', () => {
 
 
 function cardSpoilers() {
-	const spoilers = document.querySelectorAll('.card-spoiler');
+	const textSpoilers = document.querySelectorAll('.card-spoiler');
 
-	spoilers.forEach((item) => {
-		const textHolder = item.querySelector(".card-text"),
+	textSpoilers.forEach((item) => {
+		const cardText = item.querySelector(".card-text"),
 			paragraphs = item.querySelectorAll('p'),
 			btn = item.querySelector('.btn-more');
 		let height = 0,
@@ -27,23 +27,23 @@ function cardSpoilers() {
 			item.classList.add('show-btn');
 		}
 
-		height = textHolder.offsetHeight;
-		textHolder.style.height = `${height}px`;
+		height = cardText.offsetHeight;
+		cardText.style.height = `${height}px`;
 
-		if (height === textHolder.scrollHeight) {
+		if (height === cardText.scrollHeight) {
 			item.classList.remove('show-btn');
 		}
 
 		btn.addEventListener('click', function (event) {
 			event.preventDefault();
 			if (!btnState) {
-				textHolder.classList.add('show-full');
-				textHolder.style.height = `${textHolder.scrollHeight}px`;
+				cardText.classList.add('show-full');
+				cardText.style.height = `${cardText.scrollHeight}px`;
 				btn.innerHTML = 'Show less';
 				btnState = true;
 			} else {
-				textHolder.classList.remove('show-full');
-				textHolder.style.height = `${height}px`;
+				cardText.classList.remove('show-full');
+				cardText.style.height = `${height}px`;
 				btn.innerHTML = 'Show more';
 				btnState = false;
 			}
